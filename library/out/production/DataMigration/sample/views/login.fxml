@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.LoginController">
+   <children>
+      <AnchorPane layoutX="32.0" layoutY="48.0" prefHeight="497.0" prefWidth="586.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="47.0">
+         <children>
+            <AnchorPane layoutX="310.0" layoutY="35.0" maxWidth="294.0" prefHeight="433.0" prefWidth="267.0" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="37.39999999999998" AnchorPane.leftAnchor="310.00000000000006" AnchorPane.rightAnchor="26.80000000000001" AnchorPane.topAnchor="35.0">
+               <children>
+                  <Label layoutX="160.0" layoutY="87.0" text="Login" AnchorPane.bottomAnchor="319.6" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="109.19999999999993" AnchorPane.topAnchor="87.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="usernameTextField" focusColor="#0be6ff" labelFloat="true" layoutX="72.0" layoutY="149.0" prefHeight="39.0" prefWidth="222.0" promptText="Username" AnchorPane.leftAnchor="72.19999999999993" AnchorPane.rightAnchor="23.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="enterPasswordField" focusColor="#0be6ff" labelFloat="true" layoutX="72.0" layoutY="229.0" prefHeight="39.0" prefWidth="222.0" promptText="Password" AnchorPane.leftAnchor="72.19999999999993" AnchorPane.rightAnchor="23.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton buttonType="RAISED" layoutX="135.0" layoutY="318.0" onAction="#loginButtonOnAction" prefHeight="35.0" prefWidth="95.0" ripplerFill="WHITE" style="-fx-background-color: orange; -fx-background-radius: 1em;" text="Login" AnchorPane.bottomAnchor="80.60000000000002" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="87.19999999999993" AnchorPane.topAnchor="318.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="loginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="285.0" prefHeight="21.0" prefWidth="220.0" textFill="RED" />
+                  <JFXButton id="buttonClose" fx:id="closeLogin" ellipsisString="" layoutX="265.0" layoutY="2.0" onMouseClicked="#handleClicks" prefHeight="27.0" prefWidth="48.0" style="-fx-background-radius: 1em;" stylesheets="@../sample/css/fullpackstyling.css" AnchorPane.rightAnchor="4.199999999999932" AnchorPane.topAnchor="2.0">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CLOSE" onMouseClicked="#handleClicks" size="17" wrappingWidth="24.357142448425293" />
+                     </graphic>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="20.0" layoutY="22.0" prefHeight="466.0" prefWidth="344.0" style="-fx-background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="22.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" layoutX="94.0" layoutY="284.0" prefHeight="154.0" prefWidth="174.0" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="156.0">
+                     <children>
+                        <Label text="Tradding" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Database Bridge" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

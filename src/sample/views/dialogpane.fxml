@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.BookmarkController">
+   <center>
+      <StackPane fx:id="rootPane" prefWidth="425.0">
+         <children>
+            <AnchorPane fx:id="anchorAdd" prefWidth="425.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="40.0" layoutY="-14.0" prefHeight="432.0" prefWidth="425.0" spacing="20.0" style="-fx-background-color: #2F333D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="labelTitle" text="Add Bookmarks" textFill="#ffff8d">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="44.0" prefWidth="365.0" spacing="30.0">
+                           <children>
+                              <JFXTextField fx:id="bookmarksName" focusColor="#ffff8d" promptText="Bookmarks Name" style="-fx-text-fill: #ffff8d; -fx-prompt-text-fill: gray;" unFocusColor="#aeaeae" />
+                              <JFXComboBox fx:id="cbViewSelected" focusColor="#ffff8d" onAction="#clearSelection" onMouseClicked="#handleClicks" promptText="View Selected" style="-fx-prompt-text-fill: gray;" stylesheets="@../css/combobox.css" unFocusColor="#b5b4b4" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tableAddBookmarks" prefHeight="286.0" prefWidth="413.0" stylesheets="@../css/dark-theme.css" tableMenuButtonVisible="true">
+                           <columns>
+                              <TableColumn fx:id="cb1" minWidth="30.0" prefWidth="-1.0" />
+                              <TableColumn fx:id="cb2" minWidth="200.0" prefWidth="-1.0" text="NAMA TABEL" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <JFXButton id="saveId" fx:id="saveId" accessibleText="saveId" defaultButton="true" onMouseClicked="#handleClicks" prefHeight="33.0" prefWidth="72.0" stylesheets="@../css/dark-theme.css" text="Save" />
+                              <JFXButton fx:id="resetId" cancelButton="true" onMouseClicked="#handleClicks" prefHeight="33.0" prefWidth="72.0" stylesheets="@../css/dark-theme.css" text="Clear">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.28406432271003723" green="0.31578946113586426" blue="0.04385964944958687" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </JFXButton>
+                              <JFXButton fx:id="backId" cancelButton="true" onMouseClicked="#handleClicks" prefHeight="33.0" prefWidth="72.0" stylesheets="@../css/dark-theme.css" text="Cancel">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.28406432271003723" green="0.31578946113586426" blue="0.04385964944958687" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorEdit" prefWidth="425.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="40.0" layoutY="-14.0" prefHeight="432.0" prefWidth="425.0" spacing="20.0" style="-fx-background-color: #2F333D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="labelTitle1" text="Edit Bookmarks" textFill="#ffff8d">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="44.0" prefWidth="365.0" spacing="30.0">
+                           <children>
+                              <JFXTextField fx:id="bookmarksNameEdit" focusColor="#ffff8d" promptText="Bookmarks Name" style="-fx-text-fill: #ffff8d; -fx-prompt-text-fill: gray;" unFocusColor="#aeaeae" />
+                              <JFXComboBox fx:id="cbViewSelectedEdit" focusColor="#ffff8d" onAction="#clearSelection" onMouseClicked="#handleClicks" promptText="View Selected" style="-fx-prompt-text-fill: gray;" stylesheets="@../css/combobox.css" unFocusColor="#b5b4b4" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tableEditBookmarks" prefHeight="286.0" prefWidth="413.0" stylesheets="@../css/dark-theme.css" tableMenuButtonVisible="true">
+                           <columns>
+                              <TableColumn fx:id="cb1Edit" minWidth="30.0" prefWidth="-1.0" />
+                              <TableColumn fx:id="cb2Edit" minWidth="200.0" prefWidth="-1.0" text="NAMA TABEL" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <JFXButton id="saveId" fx:id="editId" accessibleText="saveId" defaultButton="true" onMouseClicked="#handleClicks" prefHeight="33.0" prefWidth="72.0" stylesheets="@../css/dark-theme.css" text="Save" />
+                              <JFXButton fx:id="backIdEdit" cancelButton="true" onMouseClicked="#handleClicks" prefHeight="33.0" prefWidth="72.0" stylesheets="@../css/dark-theme.css" text="Cancel">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.28406432271003723" green="0.31578946113586426" blue="0.04385964944958687" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorList" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2F333D;">
+               <children>
+                  <VBox alignment="CENTER" layoutX="167.0" layoutY="29.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="List Bookmarks" textFill="#ffff8d">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="312.0" prefWidth="425.0" style="-fx-background-color: #343843;">
+                           <children>
+                              <TableView fx:id="tableListBookmarks" layoutY="7.0" maxHeight="320.0" prefWidth="425.0" style="-fx-border-radius: 1em; -fx-background-radius: 1em;" stylesheets="@../css/dark-theme.css" tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="cbList1" prefWidth="167.0" text="Bookmarks Name" />
+                                  <TableColumn fx:id="cbList2" prefWidth="254.0" text="Selected" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <HBox alignment="CENTER" spacing="25.0">
+                           <children>
+                              <JFXButton fx:id="btnMigrasiTerpilih11" ellipsisString="" graphicTextGap="8.0" onAction="#addBookmarks" prefHeight="31.0" prefWidth="80.0" style="-fx-background-radius: 50px; -fx-border-radius: 50px;" stylesheets="@../css/dark-theme.css" text="Add" textAlignment="CENTER" textFill="WHITE" />
+                              <JFXButton fx:id="closeId" ellipsisString="" graphicTextGap="8.0" prefHeight="31.0" prefWidth="80.0" style="-fx-background-radius: 50px; -fx-border-radius: 50px;" stylesheets="@../css/dark-theme.css" text="Close" textAlignment="CENTER" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane prefHeight="456.0" prefWidth="600.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.SettingsController">
+   <children>
+      <BorderPane>
+         <center>
+            <AnchorPane fx:id="anchorid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="600.0" stylesheets="@../css/dark-theme.css">
+               <children>
+                  <JFXTabPane fx:id="dashTabPane" layoutY="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab text="SQL Server ">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER" spacing="20.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <JFXTextField fx:id="textfieldServer" labelFloat="true" prefHeight="31.0" prefWidth="163.0" promptText="Nama Server" stylesheets="@../css/dark-theme.css" />
+                                                <JFXTextField fx:id="textfieldNamaSql" labelFloat="true" prefHeight="31.0" prefWidth="163.0" promptText="Nama Database" stylesheets="@../css/dark-theme.css" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER" prefHeight="71.0" prefWidth="600.0">
+                                             <children>
+                                                <JFXButton fx:id="btnConnectServer" onMouseClicked="#handleClicks" prefHeight="34.0" prefWidth="130.0" text="Test" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="149.0" prefWidth="600.0">
+                                             <children>
+                                                <VBox alignment="CENTER" prefHeight="149.0" prefWidth="169.0" spacing="15.0">
+                                                   <children>
+                                                      <Label fx:id="backupOto31" text="Jadwal Migrasi" textFill="#ffff8d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXComboBox fx:id="bookMarksCb" focusColor="#ffff8d" onMouseClicked="#handleClicks" promptText="Bookmarks List" stylesheets="@../css/combobox.css" unFocusColor="#b5b4b4" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="200.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER" prefHeight="131.0" prefWidth="280.0" spacing="15.0">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <JFXListView fx:id="listOfMigrasi" onMouseClicked="#showPopupMigrasi" prefHeight="124.0" prefWidth="74.0" stylesheets="@../css/listview.css" />
+                                                            <VBox alignment="CENTER" spacing="20.0">
+                                                               <children>
+                                                                  <JFXTimePicker fx:id="jadwalMigrasi" defaultColor="#9f9f2e" onAction="#handleAction" overLay="true" prefHeight="37.0" prefWidth="146.0" />
+                                                                  <JFXButton onAction="#addMigrasiToList" prefHeight="26.0" prefWidth="59.0" text="Add">
+                                                                     <VBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </VBox.margin>
+                                                                  </JFXButton>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Fox Pro">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="44.0" layoutY="23.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label prefHeight="39.0" text="Lokasi folder database (.phn)" textFill="#ffff8d">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="foxproPath" prefHeight="37.0" text="/path" textFill="#ffff8d">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton fx:id="btnPath" onMouseClicked="#handleClicks" prefHeight="38.0" prefWidth="157.0" ripplerFill="WHITE" style="-fx-background-radius: 1em;" stylesheets="@../css/dark-theme.css" text="GANTI LOKASI" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets top="30.0" />
+                                             </VBox.margin>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Backup">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="300.0" layoutY="35.0" prefHeight="200.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="600.0">
+                                             <children>
+                                                <VBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="1950.0">
+                                                   <children>
+                                                      <Label fx:id="backupOto" text="Backup otomatis" textFill="#ffff8d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="2000.0">
+                                                   <children>
+                                                      <JFXToggleButton fx:id="toggleBackup" ellipsisString="" onMouseClicked="#handleClicks" prefHeight="56.0" prefWidth="100.0" selected="true" text="ON" toggleColor="#9f9f2e" toggleLineColor="#c8d5a7" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="600.0">
+                                             <children>
+                                                <VBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="1950.0" spacing="5.0">
+                                                   <children>
+                                                      <Label fx:id="backupOto2" text="Lokasi folder backup" textFill="#ffff8d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXButton fx:id="backupPath" onAction="#addJadwalToList" onMouseClicked="#handleClicks" text="/path" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="2000.0">
+                                                   <children>
+                                                      <JFXButton fx:id="btnPathBackup" onMouseClicked="#handleClicks" prefHeight="29.0" prefWidth="138.0" ripplerFill="WHITE" style="-fx-background-radius: 1em;" stylesheets="@../css/dark-theme.css" text="GANTI LOKASI" textFill="WHITE" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="138.0" prefWidth="600.0">
+                                             <children>
+                                                <VBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="1950.0">
+                                                   <children>
+                                                      <Label fx:id="backupOto3" text="Jadwal backup" textFill="#ffff8d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="2000.0">
+                                                   <children>
+                                                      <HBox prefHeight="131.0" prefWidth="280.0" spacing="15.0">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <JFXListView fx:id="listOfJadwal" onMouseClicked="#showPopup" prefHeight="124.0" prefWidth="74.0" stylesheets="@../css/listview.css" />
+                                                            <VBox alignment="CENTER" spacing="20.0">
+                                                               <children>
+                                                                  <JFXTimePicker fx:id="jadwalBackup" defaultColor="#9f9f2e" onAction="#handleAction" overLay="true" prefHeight="37.0" prefWidth="146.0" />
+                                                                  <JFXButton onAction="#addJadwalToList" prefHeight="26.0" prefWidth="59.0" text="Add">
+                                                                     <VBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </VBox.margin>
+                                                                  </JFXButton>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Backup Now">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="44.0" layoutY="23.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <VBox alignment="CENTER" spacing="5.0">
+                                             <children>
+                                                <HBox alignment="CENTER" spacing="5.0">
+                                                   <children>
+                                                      <Label fx:id="foxproPath11" text="Status: " textFill="#ffff8d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <FontIcon fx:id="iconStatus" iconColor="RED" iconLiteral="fa-circle" text="" />
+                                                      <Label fx:id="labelStatusBackup" text="Not Started" textFill="#ffff8d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <Label fx:id="labelTotalTime" text="Total Time : 0 Seconds" textFill="#ffff8d">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <JFXButton fx:id="btnBackupNow" onMouseClicked="#handleClicks" prefHeight="38.0" prefWidth="157.0" ripplerFill="WHITE" style="-fx-background-radius: 1em;" stylesheets="@../css/dark-theme.css" text="BACKUP SEKARANG" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets top="30.0" />
+                                             </VBox.margin>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="86.0" prefWidth="200.0" BorderPane.alignment="CENTER_RIGHT">
+               <children>
+                  <HBox fx:id="hbox" alignment="CENTER_RIGHT" layoutX="186.0" layoutY="-15.0" prefHeight="100.0" prefWidth="419.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>

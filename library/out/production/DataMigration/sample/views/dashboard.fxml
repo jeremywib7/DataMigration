@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" minHeight="600.0" minWidth="956.0" prefHeight="792.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.DashboardController">
+   <children>
+      <AnchorPane fx:id="anchorid" prefHeight="670.0" prefWidth="1000.0" style="-fx-background-color: white;">
+          <children>
+            <StackPane layoutX="136.0" layoutY="93.0" prefHeight="703.0" prefWidth="980.0" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="93.0">
+               <children>
+                  <AnchorPane fx:id="panelHistoryBackup" prefHeight="521.0" prefWidth="952.0" style="-fx-background-color: white;">
+                     <children>
+                        <TableView fx:id="tableHistoryLogin" layoutX="333.0" layoutY="82.0" prefHeight="398.0" prefWidth="620.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="333.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="82.0">
+                          <columns>
+                            <TableColumn fx:id="tglBackup" minWidth="0.0" prefWidth="110.0" text="Tanggal" />
+                              <TableColumn fx:id="jamBackup" prefWidth="104.0" text="Jam" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <stylesheets>
+                              <URL value="@../sample/css/fullpackstyling.css" />
+                              <URL value="@../css/fullpackstyling.css" />
+                           </stylesheets>
+                        </TableView>
+                        <JFXComboBox fx:id="cbHistoryBackup" layoutX="750.0" layoutY="24.0" prefHeight="31.0" prefWidth="147.0" promptText="Filter Waktu" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="24.0" />
+                        <Label layoutX="333.0" layoutY="32.0" text="History Backup" AnchorPane.leftAnchor="333.0" AnchorPane.topAnchor="32.0">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="cbFilterDatabase" layoutX="643.0" layoutY="24.0" prefHeight="31.0" prefWidth="147.0" promptText="Filter Database" AnchorPane.rightAnchor="210.0" />
+                     </children>
+                  </AnchorPane>
+                   <ScrollPane fx:id="scrollSettings" fitToHeight="true" fitToWidth="true" prefHeight="397.0" prefWidth="1000.0" style="-fx-background-color: transparent;">
+                     <content>
+                           <AnchorPane fx:id="panelSettings" prefHeight="446.0" prefWidth="981.0" style="-fx-background-color: white;">
+                               <children>
+                                   <Label fx:id="backupOto" layoutX="332.0" layoutY="92.0" text="Backup otomatis" AnchorPane.leftAnchor="332.0">
+                                       <font>
+                                           <Font size="16.0" />
+                                       </font>
+                                   </Label>
+                                   <JFXToggleButton fx:id="toggleBackup" ellipsisString="" layoutX="886.0" layoutY="73.0" onMouseClicked="#handleClicks" prefHeight="60.0" prefWidth="122.0" selected="true" text="ON" AnchorPane.rightAnchor="44.0" />
+                                   <Label layoutX="333.0" layoutY="242.0" text="Lokasi folder database" AnchorPane.leftAnchor="333.0">
+                                       <font>
+                                           <Font size="16.0" />
+                                       </font>
+                                   </Label>
+                                   <Label fx:id="settingsPath" layoutX="333.0" layoutY="274.0" text="/path" AnchorPane.leftAnchor="333.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                                   <JFXButton fx:id="btnPath" layoutX="757.0" layoutY="256.0" onMouseClicked="#handleClicks" prefHeight="31.0" prefWidth="138.0" ripplerFill="WHITE" style="-fx-background-color: #004E5D; -fx-background-radius: 1em;" text="GANTI LOKASI" textFill="WHITE" AnchorPane.rightAnchor="59.0" />
+                                   <Label fx:id="labelJadwal" layoutX="333.0" layoutY="144.0" text="Jadwal backup" AnchorPane.leftAnchor="333.0">
+                                       <font>
+                                           <Font size="16.0" />
+                                       </font>
+                                   </Label>
+                                   <Label layoutX="333.0" layoutY="313.0" text="Lokasi folder backup" AnchorPane.leftAnchor="333.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                   </Label>
+                                   <Label fx:id="backupPath" layoutX="333.0" layoutY="345.0" text="/path" AnchorPane.leftAnchor="333.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                                   <JFXButton fx:id="btnPathBackup" layoutX="757.0" layoutY="312.0" onMouseClicked="#handleClicks" prefHeight="29.0" prefWidth="138.0" ripplerFill="WHITE" style="-fx-background-color: #004E5D; -fx-background-radius: 1em;" text="GANTI LOKASI" textFill="WHITE" AnchorPane.rightAnchor="59.0" />
+                                   <Separator layoutX="332.0" layoutY="392.0" prefHeight="3.0" prefWidth="620.0" AnchorPane.leftAnchor="332.0" AnchorPane.rightAnchor="48.0" />
+                                   <Label layoutX="331.0" layoutY="416.0" text="Nama database" AnchorPane.leftAnchor="331.0">
+                                       <font>
+                                           <Font name="System Bold" size="20.0" />
+                                       </font>
+                                   </Label>
+                                   <Label layoutX="331.0" layoutY="463.0" text="Database 1" AnchorPane.leftAnchor="331.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                   </Label>
+                                   <JFXTextField fx:id="db1" layoutX="743.0" layoutY="458.0" prefHeight="31.0" prefWidth="163.0" AnchorPane.rightAnchor="48.0" />
+                                   <Label layoutX="332.0" layoutY="507.0" text="Database 2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                   </Label>
+                                   <Label layoutX="332.0" layoutY="555.0" text="Database 3">
+                                       <font>
+                                           <Font size="16.0" />
+                                       </font>
+                                   </Label>
+                                   <JFXTextField fx:id="db2" layoutX="743.0" layoutY="505.0" prefHeight="31.0" prefWidth="163.0" AnchorPane.rightAnchor="48.0" />
+                                   <JFXTextField fx:id="db3" layoutX="743.0" layoutY="553.0" prefHeight="31.0" prefWidth="163.0" AnchorPane.rightAnchor="48.0" />
+                                   <Label layoutX="332.0" layoutY="34.0" text="Settings">
+                                       <font>
+                                           <Font name="System Bold" size="20.0" />
+                                       </font>
+                                   </Label>
+                              <AnchorPane layoutX="673.0" layoutY="613.0" prefHeight="60.0" prefWidth="267.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="613.0">
+                                 <children>
+                                         <JFXButton fx:id="btnCancelSettings" layoutX="48.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClicks" prefHeight="39.0" prefWidth="88.0" ripplerFill="#8d8a8a" style="-fx-background-color: #ffffff; -fx-background-radius: 15pt; -fx-border-color: rgba(0,0,0,0.25); -fx-border-radius: 15pt;" text="Cancel" />
+                                         <JFXButton fx:id="btnSaveSettings" layoutX="154.0" layoutY="12.0" maxHeight="38.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClicks" prefHeight="38.0" prefWidth="88.0" ripplerFill="#8d8a8a" style="-fx-background-color: #004E5D; -fx-background-radius: 15pt; -fx-border-color: rgba(0,0,0,0.25); -fx-border-radius: 15pt;" text="Save" textFill="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                              <JFXTimePicker fx:id="jadwalBackup" editable="false" layoutX="756.0" layoutY="134.0" onAction="#handleAction" overLay="true" prefHeight="31.0" prefWidth="147.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="134.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets></JFXTimePicker>
+                              <JFXButton fx:id="btnBackupAll" layoutX="756.0" layoutY="195.0" onMouseClicked="#handleClicks" prefHeight="29.0" prefWidth="138.0" ripplerFill="WHITE" style="-fx-background-color: #004E5D; -fx-background-radius: 1em;" text="BACKUP" textFill="WHITE" AnchorPane.rightAnchor="60.0" />
+                              <Label layoutX="333.0" layoutY="198.0" text="Backup sekarang">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                               </children>
+                           </AnchorPane>
+                     </content>
+                   </ScrollPane>
+                  <AnchorPane fx:id="panelDatabase1" prefHeight="521.0" prefWidth="714.0" style="-fx-background-color: white;">
+                     <children>
+                        <JFXComboBox fx:id="filterMember" layoutX="621.0" layoutY="205.0" prefHeight="31.0" prefWidth="179.0" AnchorPane.rightAnchor="180.0" />
+                        <JFXTextField fx:id="searchMember" layoutX="339.0" layoutY="204.0" prefHeight="31.0" prefWidth="267.0" promptText="Cari" AnchorPane.leftAnchor="339.0" />
+                        <FontAwesomeIconView fill="#55a3b2" glyphName="SEARCH" layoutX="316.0" layoutY="227.0" size="15" wrappingWidth="20.571426138281822" />
+                        <JFXButton fx:id="btnBackupMemberMlm" buttonType="RAISED" graphicTextGap="10.0" layoutX="819.0" layoutY="197.0" onMouseClicked="#handleClicks" prefHeight="39.0" prefWidth="134.0" ripplerFill="WHITE" style="-fx-background-color: #00343E; -fx-background-radius: 15pt;" text="Migrasi" textFill="WHITE" AnchorPane.rightAnchor="27.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="RANDOM" size="15" />
+                           </graphic>
+                        </JFXButton>
+                          <TableView id="tableMemberMlm" fx:id="tableMemberMlm" layoutX="313.0" layoutY="250.0" prefHeight="447.0" prefWidth="642.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="313.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="250.0">
+                              <columns>
+                                  <TableColumn fx:id="tglu" prefWidth="84.0" text="TGLGABUNG" />
+                                  <TableColumn fx:id="kode" prefWidth="195.0" text="KODE" />
+                                  <TableColumn fx:id="nama" prefWidth="167.3333740234375" text="NAMA" />
+                                  <TableColumn fx:id="alamat" prefWidth="111.33331298828125" text="ALAMAT" />
+                                  <TableColumn fx:id="kota" prefWidth="101.33331298828125" text="KOTA" />
+                              </columns>
+                              <columnResizePolicy>
+                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                              </columnResizePolicy>
+                           <stylesheets>
+                              <URL value="@../sample/css/fullpackstyling.css" />
+                              <URL value="@../css/fullpackstyling.css" />
+                           </stylesheets>
+                          </TableView>
+                        <AnchorPane layoutX="292.0" layoutY="15.0" prefHeight="172.0" prefWidth="664.0" style="-fx-background-color: #55A3B2;" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                                  <Label fx:id="labeldb1" layoutX="33.0" layoutY="78.0" text="Member MLM" textFill="WHITE" AnchorPane.leftAnchor="33.0">
+                                      <font>
+                                          <Font name="System Bold" size="22.0" />
+                                      </font>
+                                  </Label>
+                                  <Label fx:id="labelPath" layoutX="33.0" layoutY="50.0" text="/path/membermlm.phn" textFill="WHITE" AnchorPane.leftAnchor="33.0">
+                                      <font>
+                                          <Font size="16.0" />
+                                      </font>
+                                  </Label>
+                              <Label fx:id="warningMlm" layoutX="33.0" layoutY="20.0" prefHeight="21.0" prefWidth="184.0" text="File tidak ditemukan" textFill="RED" visible="false" AnchorPane.leftAnchor="33.0">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="RED" glyphName="WARNING" />
+                                 </graphic>
+                              </Label>
+                              <VBox layoutX="516.0" layoutY="3.0" prefHeight="165.0" prefWidth="152.0" AnchorPane.rightAnchor="40.0">
+                                 <children>
+                                    <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="38.0" prefWidth="152.0" text="Waktu Refresh" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label fx:id="labelTimer" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="152.0" text="0 " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox fx:id="progressMemberMlm" prefHeight="38.0" prefWidth="152.0">
+                                       <children>
+                                          <JFXProgressBar />
+                                          <Label fx:id="labelMemuat" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="152.0" text="Menghitung data..." textAlignment="CENTER" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <Label fx:id="labelTotalMemberMlm" contentDisplay="CENTER" prefWidth="152.0" text="Total Data :" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin></Label>
+                                    <Label fx:id="labelUpdateMemberMlm" contentDisplay="CENTER" prefWidth="152.0" text="Terakhir di-update :" textFill="WHITE" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <JFXButton fx:id="btnYesMember" buttonType="RAISED" ellipsisString="" graphicTextGap="0.0" layoutX="29.0" layoutY="110.0" onMouseClicked="#handleClicks" prefHeight="25.0" prefWidth="11.0" ripplerFill="WHITE" AnchorPane.leftAnchor="29.0" />
+                              <JFXButton fx:id="btnNoMember" buttonType="RAISED" cancelButton="true" ellipsisString="" graphicTextGap="0.0" layoutX="65.0" layoutY="110.0" onMouseClicked="#handleClicks" prefHeight="25.0" prefWidth="11.0" ripplerFill="WHITE" AnchorPane.leftAnchor="65.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelDatabase3" prefHeight="521.0" prefWidth="714.0" style="-fx-background-color: white;">
+                     <children>
+                        <JFXComboBox fx:id="filterMember11" layoutX="621.0" layoutY="205.0" prefHeight="31.0" prefWidth="179.0" AnchorPane.rightAnchor="180.0" />
+                        <JFXTextField fx:id="searchMember11" layoutX="339.0" layoutY="204.0" prefHeight="31.0" prefWidth="267.0" promptText="Cari" AnchorPane.leftAnchor="339.0" />
+                        <FontAwesomeIconView fill="#55a3b2" glyphName="SEARCH" layoutX="316.0" layoutY="227.0" size="15" wrappingWidth="20.571426138281822" />
+                        <JFXButton fx:id="btnBackupMemberMlm11" buttonType="RAISED" graphicTextGap="10.0" layoutX="819.0" layoutY="197.0" onMouseClicked="#handleClicks" prefHeight="39.0" prefWidth="134.0" ripplerFill="WHITE" style="-fx-background-color: #5D4E00; -fx-background-radius: 15pt;" text="Migrasi" textFill="WHITE" AnchorPane.rightAnchor="27.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="RANDOM" size="15" />
+                           </graphic>
+                        </JFXButton>
+                        <TableView id="tableBayarp" fx:id="tableBayarp1" layoutX="313.0" layoutY="250.0" prefHeight="447.0" prefWidth="642.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="313.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="250.0">
+                           <columns>
+                              <TableColumn fx:id="tglu11" prefWidth="84.0" text="TGLGABUNG" />
+                              <TableColumn fx:id="kode11" prefWidth="195.0" text="KODE" />
+                              <TableColumn fx:id="nama11" prefWidth="167.3333740234375" text="NAMA" />
+                              <TableColumn fx:id="alamat11" prefWidth="111.33331298828125" text="ALAMAT" />
+                              <TableColumn fx:id="kota11" prefWidth="101.33331298828125" text="KOTA" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <stylesheets>
+                              <URL value="@../sample/css/fullpackstyling.css" />
+                              <URL value="@../css/fullpackstyling.css" />
+                           </stylesheets>
+                        </TableView>
+                        <AnchorPane layoutX="292.0" layoutY="15.0" prefHeight="172.0" prefWidth="664.0" style="-fx-background-color: #5D4E00;" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label fx:id="labeldb3" layoutX="33.0" layoutY="78.0" text="Database 3" textFill="WHITE" AnchorPane.leftAnchor="33.0">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelPath11" layoutX="33.0" layoutY="50.0" text="/path/database3" textFill="WHITE" AnchorPane.leftAnchor="33.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="warningMlm11" layoutX="33.0" layoutY="20.0" prefHeight="21.0" prefWidth="184.0" text="File tidak ditemukan" textFill="RED" visible="false" AnchorPane.leftAnchor="33.0">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="RED" glyphName="WARNING" />
+                                 </graphic>
+                              </Label>
+                              <VBox layoutX="516.0" layoutY="3.0" prefHeight="165.0" prefWidth="152.0" AnchorPane.rightAnchor="40.0">
+                                 <children>
+                                    <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="38.0" prefWidth="152.0" text="Waktu Refresh" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label fx:id="labelTimer11" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="152.0" text="0 " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox fx:id="progressMemberMlm11" prefHeight="38.0" prefWidth="152.0">
+                                       <children>
+                                          <JFXProgressBar />
+                                          <Label fx:id="labelMemuat11" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="152.0" text="Menghitung data..." textAlignment="CENTER" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <Label fx:id="labelTotalMemberMlm11" contentDisplay="CENTER" prefWidth="152.0" text="Total Data :" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="labelUpdateMemberMlm11" contentDisplay="CENTER" prefWidth="152.0" text="Terakhir di-update :" textFill="WHITE" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <JFXButton fx:id="btnYesMember11" buttonType="RAISED" ellipsisString="" graphicTextGap="0.0" layoutX="29.0" layoutY="110.0" onMouseClicked="#handleClicks" prefHeight="25.0" prefWidth="11.0" ripplerFill="WHITE" AnchorPane.leftAnchor="29.0" />
+                              <JFXButton fx:id="btnNoMember11" buttonType="RAISED" cancelButton="true" ellipsisString="" graphicTextGap="0.0" layoutX="65.0" layoutY="110.0" onMouseClicked="#handleClicks" prefHeight="25.0" prefWidth="11.0" ripplerFill="WHITE" AnchorPane.leftAnchor="65.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelDatabase2" prefHeight="521.0" prefWidth="714.0" style="-fx-background-color: white;">
+                     <children>
+                        <JFXComboBox fx:id="filterMember1" layoutX="621.0" layoutY="205.0" prefHeight="31.0" prefWidth="179.0" AnchorPane.rightAnchor="180.0" />
+                        <JFXTextField fx:id="searchMember1" layoutX="339.0" layoutY="204.0" prefHeight="31.0" prefWidth="267.0" promptText="Cari" AnchorPane.leftAnchor="339.0" />
+                        <FontAwesomeIconView fill="#55a3b2" glyphName="SEARCH" layoutX="316.0" layoutY="227.0" size="15" wrappingWidth="20.571426138281822" />
+                        <JFXButton fx:id="btnBackupMemberMlm1" buttonType="RAISED" graphicTextGap="10.0" layoutX="819.0" layoutY="197.0" onMouseClicked="#handleClicks" prefHeight="39.0" prefWidth="134.0" ripplerFill="WHITE" style="-fx-background-color: #3E3E3E; -fx-background-radius: 15pt;" text="Migrasi" textFill="WHITE" AnchorPane.rightAnchor="27.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="RANDOM" size="15" />
+                           </graphic>
+                        </JFXButton>
+                        <TableView id="tableBayarp" fx:id="tableBayarp" layoutX="313.0" layoutY="250.0" prefHeight="447.0" prefWidth="642.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="313.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="250.0">
+                           <columns>
+                              <TableColumn fx:id="tglu1" prefWidth="84.0" text="TGLGABUNG" />
+                              <TableColumn fx:id="kode1" prefWidth="195.0" text="KODE" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <stylesheets>
+                              <URL value="@../sample/css/fullpackstyling.css" />
+                              <URL value="@../css/fullpackstyling.css" />
+                           </stylesheets>
+                        </TableView>
+                        <AnchorPane layoutX="292.0" layoutY="15.0" prefHeight="172.0" prefWidth="664.0" style="-fx-background-color: #3E3E3E;" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label fx:id="labeldb2" layoutX="33.0" layoutY="78.0" text="Bayar P" textFill="WHITE" AnchorPane.leftAnchor="33.0">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelPath1" layoutX="33.0" layoutY="50.0" text="/path/membermlm.phn" textFill="WHITE" AnchorPane.leftAnchor="33.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="warningMlm1" layoutX="33.0" layoutY="20.0" prefHeight="21.0" prefWidth="184.0" text="File tidak ditemukan" textFill="RED" visible="false" AnchorPane.leftAnchor="33.0">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="RED" glyphName="WARNING" />
+                                 </graphic>
+                              </Label>
+                              <VBox layoutX="516.0" layoutY="3.0" prefHeight="165.0" prefWidth="152.0" AnchorPane.rightAnchor="40.0">
+                                 <children>
+                                    <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="38.0" prefWidth="152.0" text="Waktu Refresh" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label fx:id="labelTimer1" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="152.0" text="0 " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox fx:id="progressMemberMlm1" prefHeight="38.0" prefWidth="152.0">
+                                       <children>
+                                          <JFXProgressBar />
+                                          <Label fx:id="labelMemuat1" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="152.0" text="Menghitung data..." textAlignment="CENTER" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <Label fx:id="labelTotalMemberMlm1" contentDisplay="CENTER" prefWidth="152.0" text="Total Data :" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="labelUpdateMemberMlm1" contentDisplay="CENTER" prefWidth="152.0" text="Terakhir di-update :" textFill="WHITE" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <JFXButton fx:id="btnYesMember1" buttonType="RAISED" ellipsisString="" graphicTextGap="0.0" layoutX="29.0" layoutY="110.0" onMouseClicked="#handleClicks" prefHeight="25.0" prefWidth="11.0" ripplerFill="WHITE" AnchorPane.leftAnchor="29.0" />
+                              <JFXButton fx:id="btnNoMember1" buttonType="RAISED" cancelButton="true" ellipsisString="" graphicTextGap="0.0" layoutX="65.0" layoutY="110.0" onMouseClicked="#handleClicks" prefHeight="25.0" prefWidth="11.0" ripplerFill="WHITE" AnchorPane.leftAnchor="65.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+              <VBox layoutY="1.0" prefHeight="767.0" prefWidth="294.0" style="-fx-background-color: #004E5D;" AnchorPane.bottomAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                      <Pane prefHeight="163.0" prefWidth="294.0">
+                          <children>
+                              <FontAwesomeIconView fx:id="iconDatabase" fill="WHITE" glyphName="DATABASE" layoutX="44.0" layoutY="93.0" size="32" text="" />
+                              <Label layoutX="86.0" layoutY="67.0" text="Database Bridge" textFill="WHITE">
+                                  <font>
+                                      <Font name="System Bold" size="22.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                      </Pane>
+                      <JFXButton fx:id="btnDatabase" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="60.0" prefWidth="296.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Data Migration" textFill="WHITE">
+                          <font>
+                              <Font size="17.0" />
+                          </font>
+                          <padding>
+                              <Insets left="50.0" />
+                          </padding>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="DATABASE" size="17" />
+                     </graphic>
+                      </JFXButton>
+                  <VBox fx:id="subDatabase" prefWidth="294.0">
+                     <children>
+                        <JFXButton fx:id="btnDatabase1" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="35.0" prefWidth="294.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Database 1" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets left="70.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="GROUP" size="17" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDatabase2" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="35.0" prefWidth="294.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Database 2" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets left="70.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" size="17" text="" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDatabase3" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="35.0" prefWidth="294.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Database 3" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets left="70.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="GROUP" size="17" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnComingSoon3" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="35.0" prefWidth="294.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Database 4" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets left="70.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="GROUP" size="17" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                      <JFXButton fx:id="btnHistory" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="60.0" prefWidth="296.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="History" textFill="WHITE">
+                          <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="HISTORY" size="17" />
+                          </graphic>
+                          <font>
+                              <Font size="17.0" />
+                          </font>
+                          <padding>
+                              <Insets left="50.0" />
+                          </padding>
+                      </JFXButton>
+                  <VBox fx:id="subHistory" prefWidth="294.0">
+                     <children>
+                        <JFXButton fx:id="btnMemberMlm1" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="35.0" prefWidth="294.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Login" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets left="70.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="GROUP" size="17" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnHistoryBackup" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="35.0" prefWidth="294.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Backup" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets left="70.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" size="17" text="" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                      <JFXButton fx:id="btnSettings" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="60.0" prefWidth="296.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Settings" textFill="WHITE">
+                          <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="COG" size="17" />
+                          </graphic>
+                          <font>
+                              <Font size="17.0" />
+                          </font>
+                          <padding>
+                              <Insets left="50.0" />
+                          </padding>
+                      </JFXButton>
+                  <JFXButton fx:id="btnSignOut" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#handleClicks" prefHeight="60.0" prefWidth="296.0" ripplerFill="WHITE" stylesheets="@../sample/css/fullpackstyling.css" text="Sign Out" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="POWER_OFF" size="17" />
+                     </graphic>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </JFXButton>
+                  </children>
+              </VBox>
+            <Label fx:id="labelDate" layoutX="335.0" layoutY="30.0" prefHeight="38.0" prefWidth="267.0" text="07 : 00 : 00 - 21 July 2021 " AnchorPane.leftAnchor="335.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="825.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="155.0" style="-fx-background-color: #F0F0F0;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="btnClose" ellipsisString="" graphicTextGap="0.0" layoutX="103.0" prefHeight="39.0" prefWidth="52.0" text=" " AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CLOSE" size="15" wrappingWidth="8.0" />
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="btnClose1" ellipsisString="" graphicTextGap="0.0" layoutX="53.0" prefHeight="39.0" prefWidth="52.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CLONE" size="15" wrappingWidth="8.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnClose11" ellipsisString="" graphicTextGap="0.0" prefHeight="39.0" prefWidth="52.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="MINUS" size="15" wrappingWidth="8.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="541.0" layoutY="14.0" prefHeight="70.0" prefWidth="155.0" style="-fx-background-insets: 12; -fx-background-color: white; -fx-background-radius: 1em;">
+               <children>
+                  <Label layoutX="40.0" layoutY="18.0" minWidth="-Infinity" prefHeight="31.0" prefWidth="36.0" text="User" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="79.0" />
+                  <FontAwesomeIconView fill="#949090" glyphName="USER" layoutX="94.0" layoutY="42.0" size="25" wrappingWidth="19.64285659790039" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <Label graphicTextGap="10.0" layoutX="826.0" layoutY="61.0" text="Service Online" AnchorPane.rightAnchor="39.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#48ff00" glyphName="CIRCLE" lineSpacing="10.0" />
+               </graphic>
+            </Label>
+          </children>
+      </AnchorPane>
+      <JFXDialog fx:id="dialogYesNo">
+            <JFXDialogLayout fx:id="layoutYesNo">
+                <body>
+                    <Label fx:id="labelDialog" graphicTextGap="20.0">Lorem ipsum dolor sit amet
+                        <graphic>
+                            <FontAwesomeIconView fx:id="iconYesNo" glyphName="SAVE" size="30" />
+                        </graphic>
+                    </Label>
+                </body>
+                <actions>
+                    <JFXButton fx:id="btnNo" ripplerFill="#9e9494" style="-fx-background-color: #ffffff; -fx-background-radius: 15pt; -fx-border-color: rgba(0,0,0,0.25); -fx-border-radius: 15pt;" text="Tidak" textFill="BLACK" />
+                    <JFXButton fx:id="btnYes" ripplerFill="WHITE" style="-fx-background-color: #00343E; -fx-background-radius: 15pt;" text="Sign Out" textFill="WHITE" />
+                </actions>
+            </JFXDialogLayout>
+      </JFXDialog>
+   </children>
+</StackPane>

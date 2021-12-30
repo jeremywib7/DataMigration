@@ -1,0 +1,14 @@
+.jfx-combo-box {
+    -fx-text-inner-color: black;
+    -fx-prompt-text-fill: gray;
+}
+
+.jfx-combo-box .cell {
+    -fx-text-fill: white;
+    -fx-background-color: #2F333D;
+}
+
+.combo-box .cell:hover {
+    -fx-background-color: #FFFF8D;
+    -fx-text-fill: black;
+}

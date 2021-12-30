@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox fx:id="vboxButton" style="-fx-background-color: #343843;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="152.0" prefWidth="220.0">
+         <children>
+            <Label layoutX="40.0" layoutY="66.0" prefHeight="27.0" prefWidth="155.0" text="Database Bridge" textFill="#ffff8d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="63.0" layoutY="96.0" prefHeight="27.0" prefWidth="95.0" text="v. 6 -10- 2021" textFill="#ffff8d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <JFXButton accessibleText="navTask" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="15.0" prefHeight="50.0" prefWidth="220.0" ripplerFill="#778425" style="-fx-background-color: #343843;" text="Dashboard" textFill="#ffff8d">
+         <padding>
+            <Insets bottom="5.0" left="50.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontIcon iconColor="#ffff8d" iconLiteral="fa-table" />
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleText="navDashboard" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="15.0" prefHeight="50.0" prefWidth="220.0" ripplerFill="#778425" style="-fx-background-color: #343843;" text="Manual Task" textFill="#ffff8d">
+         <padding>
+            <Insets bottom="5.0" left="50.0" top="5.0" />
+         </padding>
+
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontIcon iconColor="#ffff8d" iconLiteral="fa-dashboard" />
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleText="navHistory" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="15.0" prefHeight="50.0" prefWidth="220.0" ripplerFill="#778425" style="-fx-background-color: #343843;" text=" History" textFill="#ffff8d">
+         <padding>
+            <Insets bottom="5.0" left="50.0" top="5.0" />
+         </padding>
+
+
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontIcon iconColor="#ffff8d" iconLiteral="fa-history" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="buttonSettings" accessibleText="navSettings" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="15.0" prefHeight="50.0" prefWidth="220.0" ripplerFill="#778425" style="-fx-background-color: #343843;" text=" Settings" textFill="#ffff8d">
+         <padding>
+            <Insets bottom="5.0" left="50.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontIcon iconColor="#ffff8d" iconLiteral="fa-cog" />
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleText="navLogout" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="15.0" prefHeight="50.0" prefWidth="220.0" ripplerFill="#778425" style="-fx-background-color: #343843;" text=" Log out" textFill="#ffff8d">
+         <padding>
+            <Insets bottom="5.0" left="50.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontIcon iconColor="#ffff8d" iconLiteral="fa-sign-out" />
+         </graphic>
+      </JFXButton>
+   </children>
+</VBox>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="SSO">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/library/jdts/x64/SSO" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
