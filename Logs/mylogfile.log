@@ -21646,3 +21646,46 @@
 2021-12-30 11:02:20 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
 2021-12-30 11:02:25 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
 2021-12-30 11:02:43 INFO  DashboardController:165 - Application Closed by click to Close Button(X)
+2022-03-30 11:18:34 INFO  DashboardController:58 - Initializing login page
+2022-03-30 11:18:42 INFO  DashboardController:58 - Initializing login page
+2022-03-30 11:19:15 INFO  DashboardController:58 - Initializing login page
+2022-03-30 11:21:08 INFO  DashboardController:58 - Initializing login page
+2022-03-30 11:28:36 INFO  DashboardController:58 - Initializing login page
+2022-03-30 11:44:29 INFO  DashboardController:58 - Initializing login page
+2022-03-30 11:44:40 DEBUG SettingsController:67 - Settings openned
+2022-03-30 11:45:23 INFO  DashboardController:58 - Initializing login page
+2022-03-30 11:45:29 DEBUG SettingsController:67 - Settings openned
+2022-03-30 11:47:27 INFO  DashboardController:1018 - Backup scheduled for: 11:46. Result: Success
+2022-03-30 11:47:42 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 11:54:56 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 11:54:59 INFO  DashboardController:165 - Application Closed by click to Close Button(X)
+2022-03-30 12:01:48 INFO  DashboardController:58 - Initializing login page
+2022-03-30 12:02:08 DEBUG SettingsController:67 - Settings openned
+2022-03-30 12:02:19 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 12:02:32 INFO  DashboardController:165 - Application Closed by click to Close Button(X)
+2022-03-30 12:53:07 INFO  DashboardController:58 - Initializing login page
+2022-03-30 12:53:14 DEBUG SettingsController:67 - Settings openned
+2022-03-30 12:53:43 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 12:54:02 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 12:55:20 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 12:56:55 INFO  DashboardController:1018 - Backup scheduled for: 12:56. Result: Success
+2022-03-30 13:00:28 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 13:02:04 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 13:02:16 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 13:03:21 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 13:03:35 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 13:16:36 INFO  DashboardController:165 - Application Closed by click to Close Button(X)
+2022-03-30 15:13:51 INFO  DashboardController:58 - Initializing login page
+2022-03-30 15:25:11 INFO  DashboardController:58 - Initializing login page
+2022-03-30 15:26:37 INFO  DashboardController:58 - Initializing login page
+2022-03-30 15:26:45 DEBUG SettingsController:67 - Settings openned
+2022-03-30 15:27:37 INFO  DashboardController:1018 - Backup scheduled for: 15:26. Result: Success
+2022-03-30 15:27:40 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 15:28:44 INFO  DashboardController:165 - Application Closed by click to Close Button(X)
+2022-03-30 15:36:46 INFO  DashboardController:58 - Initializing login page
+2022-03-30 15:36:53 DEBUG SettingsController:67 - Settings openned
+2022-03-30 15:37:26 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 15:37:48 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 15:41:50 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 15:42:12 INFO  DashboardController:266 - Settings Closed by click to Close Button(X)
+2022-03-30 15:47:20 INFO  DashboardController:165 - Application Closed by click to Close Button(X)

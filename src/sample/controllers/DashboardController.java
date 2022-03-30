@@ -45,10 +45,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -56,17 +53,11 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
-import net.lingala.zip4j.model.ZipParameters;
-import net.lingala.zip4j.model.enums.AesKeyStrength;
-import net.lingala.zip4j.model.enums.CompressionMethod;
-import net.lingala.zip4j.model.enums.EncryptionMethod;
-import net.lingala.zip4j.progress.ProgressMonitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.kordamp.ikonli.javafx.FontIcon;
 import sample.models.*;
 
-import java.awt.Desktop;
 import java.io.*;
 import java.math.BigDecimal;
 import java.net.URL;
@@ -1918,7 +1909,7 @@ public class DashboardController implements Initializable {
                              }
 
                              if (reader.getFieldCount() == 0){
-                                 if(multimigration) {
+                                 if (multimigration) {
                                      updateProgress(100,100);
                                  } else {
                                      updateProgress(100,100);
